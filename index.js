@@ -28,7 +28,7 @@ server.post("/tweets", (req, res) => {
     res.send("OK");
 });
 
-server.get("/tweets", (req, res) => {
+server.get("/tweets", (_req, res) => {
     const latestTweets = tweets.slice(-10);
     latestTweets.reverse();
     for(let i of latestTweets) {
