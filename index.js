@@ -7,14 +7,14 @@ server.use(express.json());
 
 const user = [
     {
-        username: "bobesponja",
-        avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info"
+        username: "tanjiro",
+        avatar: "https://kanto.legiaodosherois.com.br/w760-h398-gnw-cfill-q95/wp-content/uploads/2022/05/legiao_q81vJiBwpAEo.png.jpeg"
     }
 ];
 const tweets = [
     {
-        username: "bobesponja",
-        tweet: "eu amo o hub"
+        username: "tanjiro",
+        tweet: "só pra ter o que começar"
     }
 ];
 
@@ -30,6 +30,7 @@ server.post("/tweets", (req, res) => {
 
 server.get("/tweets", (req, res) => {
     const latestTweets = tweets.slice(-10);
+    latestTweets.reverse();
     for(let i of latestTweets) {
         i.avatar = user.find(user => user.username === i.username).avatar;
     }
